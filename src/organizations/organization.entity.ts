@@ -4,7 +4,8 @@ import { CompanyTypeEnum } from '../shared/company-type.enum';
 
 @ChildEntity(CompanyTypeEnum.Organization)
 export class OrganizationEntity extends BaseCompany {
-  constructor() {
+  constructor(payload: Partial<OrganizationEntity>) {
     super(CompanyTypeEnum.Organization);
+    Object.assign(this, payload);
   }
 }
